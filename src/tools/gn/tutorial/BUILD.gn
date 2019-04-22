@@ -1,0 +1,20 @@
+executable("hello_world") {
+  sources = [
+    "hello_world.cc",
+  ]
+}
+
+static_library("hello") {
+  sources = [
+    "hello.cc",
+  ]
+}
+
+executable("say_hello") {
+  sources = [
+    "say_hello.cc",
+  ]
+  deps = [
+    ":hello",
+  ]
+}
